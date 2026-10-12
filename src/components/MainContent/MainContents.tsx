@@ -10,8 +10,8 @@ export default function MainContents({ courses }: MainContentsProps) {
     return (
         <section id="core-concepts">
             <ul>
-                {courses.map((concept) => (
-                    <MainContent key={concept.title} {...concept} />
+                {courses.map((course) => (
+                    <MainContent key={course.name} {...course} />
                 ))}
             </ul>
         </section>

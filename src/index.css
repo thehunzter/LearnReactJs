@@ -70,6 +70,39 @@ main h2 {
   font-size: 0.9rem;
 }
 
+#core-concepts li .instructor {
+  margin: 0;
+  color: #a18aba;
+}
+
+#core-concepts li .meta {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: #8964b0;
+}
+
+#core-concepts li .status {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.75rem;
+  background-color: #2f1d43;
+  color: #ebe7ef;
+}
+
+#core-concepts li .status.open {
+  background-color: #7925d3;
+}
+
+#core-concepts li .status.coming-soon {
+  background-color: #4b2a75;
+}
+
+#core-concepts li .status.closed {
+  color: #a18aba;
+}
+
 #examples {
   margin: 3rem auto;
 }

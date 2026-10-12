@@ -22,10 +22,7 @@ function App() {
 
       <main>
        <MainContents courses={courses} />
-        <NewCourseForm
-          existingTitles={courses.map((course) => course.title)}
-          onAddCourse={handleAddCourse}
-        />
+        <NewCourseForm onAddCourse={handleAddCourse} />
         <Examples/>
         
       </main>

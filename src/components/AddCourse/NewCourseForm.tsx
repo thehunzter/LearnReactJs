@@ -1,31 +1,76 @@
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 import "./NewCourseForm.css";
+import pic1 from "../../assets/pic1.png";
+import pic2 from "../../assets/pic2.png";
+import pic3 from "../../assets/pic3.png";
+import pic4 from "../../assets/pic4.png";
 
-export type CourseInput = {
-  title: string;
+export type Course = {
+  image: string;
+  name: string;
+  instructor: string;
+  level: string;
+  learners: number;
+  status: string;
   desc: string;
 };
 
 type NewCourseFormProps = {
-  onAddCourse: (course: CourseInput) => void;
+  onAddCourse: (course: Course) => void;
 };
 
+const IMAGES = [
+  { label: "Picture 1", src: pic1 },
+  { label: "Picture 2", src: pic2 },
+  { label: "Picture 3", src: pic3 },
+  { label: "Picture 4", src: pic4 },
+];
+
+const LEVELS = ["Beginner", "Intermediate", "Advanced"];
+const STATUSES = ["Open", "Coming soon", "Closed"];
+
 export default function NewCourseForm({ onAddCourse }: NewCourseFormProps) {
-  const [title, setTitle] = useState("");
+  const [image, setImage] = useState(IMAGES[0].src);
+  const [name, setName] = useState("");
+  const [instructor, setInstructor] = useState("");
+  const [level, setLevel] = useState(LEVELS[0]);
+  const [learners, setLearners] = useState("");
+  const [status, setStatus] = useState(STATUSES[0]);
   const [desc, setDesc] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const trimmedTitle = title.trim();
+    const trimmedName = name.trim();
+    const trimmedInstructor = instructor.trim();
     const trimmedDesc = desc.trim();
+    const learnersCount = Number(learners);
 
-    if (!trimmedTitle || !trimmedDesc) {
+    if (
+      !trimmedName ||
+      !trimmedInstructor ||
+      !trimmedDesc ||
+      !Number.isInteger(learnersCount) ||
+      learnersCount < 0
+    ) {
       return;
     }
 
-    onAddCourse({ title: trimmedTitle, desc: trimmedDesc });
-    setTitle("");
+    onAddCourse({
+      image,
+      name: trimmedName,
+      instructor: trimmedInstructor,
+      level,
+      learners: learnersCount,
+      status,
+      desc: trimmedDesc,
+    });
+    setImage(IMAGES[0].src);
+    setName("");
+    setInstructor("");
+    setLevel(LEVELS[0]);
+    setLearners("");
+    setStatus(STATUSES[0]);
     setDesc("");
   }
 
@@ -34,16 +79,90 @@ export default function NewCourseForm({ onAddCourse }: NewCourseFormProps) {
       <h2>Add a New Course</h2>
       <form onSubmit={handleSubmit}>
         <div className="control">
-          <label htmlFor="course-title">Title</label>
+          <label htmlFor="course-image">Image</label>
+          <select
+            id="course-image"
+            name="image"
+            value={image}
+            onChange={(event) => setImage(event.target.value)}
+          >
+            {IMAGES.map((option) => (
+              <option key={option.src} value={option.src}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <img className="preview" src={image} alt="Selected course" />
+        </div>
+        <div className="control">
+          <label htmlFor="course-name">Course name</label>
           <input
-            id="course-title"
-            name="title"
+            id="course-name"
+            name="name"
             type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder="e.g. Hooks"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="e.g. React Hooks"
             required
           />
+        </div>
+        <div className="control">
+          <label htmlFor="course-instructor">Instructor</label>
+          <input
+            id="course-instructor"
+            name="instructor"
+            type="text"
+            value={instructor}
+            onChange={(event) => setInstructor(event.target.value)}
+            placeholder="e.g. Jane Doe"
+            required
+          />
+        </div>
+        <div className="control-row">
+          <div className="control">
+            <label htmlFor="course-level">Level</label>
+            <select
+              id="course-level"
+              name="level"
+              value={level}
+              onChange={(event) => setLevel(event.target.value)}
+            >
+              {LEVELS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="control">
+            <label htmlFor="course-learners">Number of learners</label>
+            <input
+              id="course-learners"
+              name="learners"
+              type="number"
+              min={0}
+              step={1}
+              value={learners}
+              onChange={(event) => setLearners(event.target.value)}
+              placeholder="e.g. 120"
+              required
+            />
+          </div>
+          <div className="control">
+            <label htmlFor="course-status">Status</label>
+            <select
+              id="course-status"
+              name="status"
+              value={status}
+              onChange={(event) => setStatus(event.target.value)}
+            >
+              {STATUSES.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="control">
           <label htmlFor="course-desc">Description</label>

@@ -11,6 +11,20 @@
   margin: 0 0 1rem 0;
 }
 
+#new-course .control {
+  margin: 0 0 1rem 0;
+}
+
+#new-course .control-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#new-course .control-row .control {
+  flex: 1 1 10rem;
+}
+
 #new-course label {
   display: block;
   margin-bottom: 0.25rem;
@@ -45,7 +59,7 @@
 #new-course .preview {
   display: block;
   width: 6rem;
-  margin: 0 auto 1rem auto;
+  margin: 1rem auto 0 auto;
   object-fit: cover;
 }
 
