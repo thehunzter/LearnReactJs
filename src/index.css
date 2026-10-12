@@ -122,3 +122,82 @@ main h2 {
 #tab-content code {
   font-size: 1rem;
 }
+
+#new-course {
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#new-course h2 {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+#new-course form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#new-course .control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#new-course label {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #a18aba;
+  font-size: 0.95rem;
+}
+
+#new-course input,
+#new-course textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #3b2754;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  color: #ebe7ef;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+#new-course input::placeholder,
+#new-course textarea::placeholder {
+  color: #8a759e;
+}
+
+#new-course input:focus,
+#new-course textarea:focus {
+  outline: 2px solid #7925d3;
+  outline-offset: 1px;
+  border-color: #7925d3;
+}
+
+#new-course button {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #7925d3;
+  color: #ebe7ef;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#new-course button:hover {
+  background-color: #8f3de0;
+}
+
+#new-course button:focus-visible {
+  outline: 2px solid #ebe7ef;
+  outline-offset: 2px;
+}
