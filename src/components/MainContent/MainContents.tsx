@@ -1,12 +1,16 @@
 
-import { myData } from "../../data.js";
 import MainContent from "./MainContent.tsx";
+import type { Course } from "../AddCourse/NewCourseForm.tsx";
 
-export default function MainContents() {
+type MainContentsProps = {
+    courses: Course[];
+};
+
+export default function MainContents({ courses }: MainContentsProps) {
     return (
         <section id="core-concepts">
             <ul>
-                {myData.map((concept) => (
+                {courses.map((concept) => (
                     <MainContent key={concept.title} {...concept} />
                 ))}
             </ul>

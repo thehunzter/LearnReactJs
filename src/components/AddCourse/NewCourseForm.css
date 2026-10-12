@@ -1,0 +1,75 @@
+
+#new-course {
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#new-course form p {
+  margin: 0 0 1rem 0;
+}
+
+#new-course label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #a18aba;
+}
+
+#new-course input,
+#new-course textarea,
+#new-course select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #2f1d43;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  color: #ebe7ef;
+  font: inherit;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#new-course input:focus,
+#new-course textarea:focus,
+#new-course select:focus {
+  outline: none;
+  border-color: #7925d3;
+}
+
+#new-course textarea {
+  resize: vertical;
+}
+
+#new-course .preview {
+  display: block;
+  width: 6rem;
+  margin: 0 auto 1rem auto;
+  object-fit: cover;
+}
+
+#new-course .error {
+  color: #e07a9b;
+  text-align: center;
+}
+
+#new-course .actions {
+  text-align: right;
+}
+
+#new-course button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #7925d3;
+  color: #ebe7ef;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#new-course button:hover {
+  background-color: #8f3ff0;
+}

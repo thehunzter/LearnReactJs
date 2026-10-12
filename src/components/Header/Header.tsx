@@ -7,8 +7,8 @@ const time = new Date().toLocaleTimeString()
     return (
         <>
             <header>
-                <h2> This is Module 1</h2>
-                <p> today is {today}, time {time} we need finish homework</p>
+                <h2>This is Module 1</h2>
+                <p>Today is {today}, time {time} we need finish homework</p>
             </header>
         </>
     )
