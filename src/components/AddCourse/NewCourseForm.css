@@ -69,7 +69,21 @@
 }
 
 #new-course .actions {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+#new-course .actions a {
+  color: #a18aba;
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+#new-course .actions a:hover {
+  color: #ebe7ef;
 }
 
 #new-course button {

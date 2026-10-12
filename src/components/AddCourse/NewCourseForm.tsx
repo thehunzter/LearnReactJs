@@ -1,4 +1,5 @@
 import { useState, type SubmitEvent } from "react";
+import { Link } from "react-router";
 import "./NewCourseForm.css";
 import pic1 from "../../assets/pic1.png";
 import pic2 from "../../assets/pic2.png";
@@ -65,13 +66,6 @@ export default function NewCourseForm({ onAddCourse }: NewCourseFormProps) {
       status,
       desc: trimmedDesc,
     });
-    setImage(IMAGES[0].src);
-    setName("");
-    setInstructor("");
-    setLevel(LEVELS[0]);
-    setLearners("");
-    setStatus(STATUSES[0]);
-    setDesc("");
   }
 
   return (
@@ -176,7 +170,10 @@ export default function NewCourseForm({ onAddCourse }: NewCourseFormProps) {
             required
           />
         </div>
-        <button type="submit">Add Course</button>
+        <div className="actions">
+          <Link to="/">Cancel</Link>
+          <button type="submit">Add Course</button>
+        </div>
       </form>
     </section>
   );
