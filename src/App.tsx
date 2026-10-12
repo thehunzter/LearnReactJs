@@ -1,9 +1,8 @@
 
 
 import "./App.css";
-import { useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router";
-import { myData } from "./data.js";
+import { useCourses } from "./hooks/useCourses.ts";
 import Header from "./components/Header/Header.tsx";
 import Examples from "./components/MainContent/Examples.tsx";
 import MainContents from "./components/MainContent/MainContents.tsx";
@@ -11,11 +10,11 @@ import NewCourseForm, { type Course } from "./components/AddCourse/NewCourseForm
 
 
 function App() {
-  const [courses, setCourses] = useState<Course[]>(myData);
+  const { courses, isLoading, error, retry, addCourse } = useCourses();
   const navigate = useNavigate();
 
   function handleAddCourse(course: Course) {
-    setCourses((prevCourses) => [...prevCourses, course]);
+    addCourse(course);
     navigate("/");
   }
 
@@ -29,7 +28,12 @@ function App() {
             path="/"
             element={
               <>
-                <MainContents courses={courses} />
+                <MainContents
+                  courses={courses}
+                  isLoading={isLoading}
+                  error={error}
+                  onRetry={retry}
+                />
                 <p className="add-course">
                   <Link to="/courses/new">+ Add New Course</Link>
                 </p>

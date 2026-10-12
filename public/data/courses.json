@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/images/pic1.png",
+    "name": "Components",
+    "instructor": "Elon Musk",
+    "level": "Beginner",
+    "learners": 1250,
+    "status": "Open",
+    "desc": "The fundamental building blocks of an interface, combined to create an application."
+  },
+  {
+    "image": "/images/pic2.png",
+    "name": "TSX",
+    "instructor": "Duong Nguyen",
+    "level": "Beginner",
+    "learners": 980,
+    "status": "Open",
+    "desc": "Combines HTML and TypeScript to create dynamic, powerful user interfaces."
+  },
+  {
+    "image": "/images/pic3.png",
+    "name": "Props",
+    "instructor": "Bill Gates",
+    "level": "Intermediate",
+    "learners": 640,
+    "status": "Coming soon",
+    "desc": "Pass data into a component to make it flexible and reusable."
+  },
+  {
+    "image": "/images/pic4.png",
+    "name": "State",
+    "instructor": "Jeff Bezos",
+    "level": "Advanced",
+    "learners": 410,
+    "status": "Closed",
+    "desc": "Data managed by React that automatically refreshes the interface when it changes."
+  }
+]

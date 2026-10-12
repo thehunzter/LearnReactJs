@@ -1,10 +1,6 @@
 import { useState, type SubmitEvent } from "react";
 import { Link } from "react-router";
 import "./NewCourseForm.css";
-import pic1 from "../../assets/pic1.png";
-import pic2 from "../../assets/pic2.png";
-import pic3 from "../../assets/pic3.png";
-import pic4 from "../../assets/pic4.png";
 
 export type Course = {
   image: string;
@@ -21,10 +17,10 @@ type NewCourseFormProps = {
 };
 
 const IMAGES = [
-  { label: "Picture 1", src: pic1 },
-  { label: "Picture 2", src: pic2 },
-  { label: "Picture 3", src: pic3 },
-  { label: "Picture 4", src: pic4 },
+  { label: "Picture 1", src: "/images/pic1.png" },
+  { label: "Picture 2", src: "/images/pic2.png" },
+  { label: "Picture 3", src: "/images/pic3.png" },
+  { label: "Picture 4", src: "/images/pic4.png" },
 ];
 
 const LEVELS = ["Beginner", "Intermediate", "Advanced"];

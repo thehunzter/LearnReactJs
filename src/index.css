@@ -103,6 +103,40 @@ main h2 {
   color: #a18aba;
 }
 
+#core-concepts .list-state {
+  margin: 0;
+  text-align: center;
+  color: #a18aba;
+}
+
+#core-concepts .list-state p {
+  margin: 0 0 1rem 0;
+}
+
+#core-concepts .list-state.error p {
+  color: #e07a9b;
+}
+
+#core-concepts .list-state button,
+#core-concepts .list-state a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #7925d3;
+  color: #ebe7ef;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#core-concepts .list-state button:hover,
+#core-concepts .list-state a:hover {
+  background-color: #8f3ff0;
+}
+
 .add-course {
   margin: 2rem 0 0 0;
   text-align: center;
